@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    window.addEventListener("load", () => {
+        // URLのハッシュを消してスクロールをトップに強制
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname); // ハッシュを消す
+            window.scrollTo(0, 0); // スクロールをトップに
+        }
+    });
+
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+
+    
+</script>
+
+
+
+<body>
+    <header id="header">
+        <nav>
+            <h1 class="logo">My Portfolio</h1>
+            <ul class="nav-links">
+                <li><a href="#hero">TOP</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#demo">Demo Reel</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+        <h2 id="typing-text">Welcome to My World</h2>
+            <p>3DCG Artist / Portfolio & Demo Reel</p>
+
+        <div class="slideshow-container">
+            <video id="slideshow-video" muted autoplay playsinline></video>
+            <div id="video-overlay" class="overlay">
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/selfy.jpg" alt="プロフィール画像">
+            </div>
+            <div class="about-text">
+                <h3>自己紹介</h3>
+                <p>
+                    はじめまして。クリン ジョンフィリップミカエルと申します。<br>私のウェブサイトをご覧いただきありがとうございます。<br>
+                    私は <strong style="color: #f28c8c; font-weight: bold;">3DCGアニメーターとして、ゲームを通して人々の心に灯りをともすような体験を届けたい</strong> と考えています。
+                </p>
+                <p>
+                    ゲームは、ただの娯楽ではなく、<strong style="color: #fce38a; font-weight: bold;">「人々の明日（未来）を創るモノ」</strong>だと思っています。<br>
+                    つらいとき、孤独なとき、悩んでいるときでも、ゲームは私に寄り添い、楽しさや希望を与えてくれました。<br>
+                    今度は私が、誰かの「明日」を照らすような作品を生み出したいと願っています。
+                </p>
+                <p>
+                    <strong style="color: #7aaacc; font-weight: bold;">没入感のあるリアルで魅力的なアニメーション表現</strong><br>にこだわりキャラクターの個性や世界の空気感が伝わる動きを追求しています。<br>
+                    一つ一つの作品に真摯に向き合いながら、これからも成長し続けていきます。
+                </p>
+
+                <div class="about-text">
+    <!-- 自己紹介・経歴の内容 -->
+
+        <h3>資格・賞罰</h3>
+            <ul>
+                <li><strong>2015年7月</strong>：日本漢字能力検定3級　合格</li>
+                <li><strong>2015年7月</strong>：実用英語技能検定2級　合格</li>
+                <li><strong>2024年8月</strong>：CGクリエイター検定ベーシック　取得</li>
+                <li><strong>2025年3月</strong>：HAL東京　一ヵ年皆勤賞　受賞</li>
+            </ul>
+
+        <h3>スキル・使用ツール</h3>
+            <ul>
+                <li><strong>3DCGツール</strong>：Maya / Motion Builder (HumanIKを用いたキャラクターリグ制作も含む)</li>
+                <li><strong>画像編集ツール</strong>：Photoshop / Illustrator</li>
+                <li><strong>ゲームエンジン</strong>：Unreal Engine / Unity</li>
+                <li><strong>映像編集・構成</strong>：After Effects</li>
+                <li><strong>基本スクリプト</strong>：HTML / CSS / JavaScript（ポートフォリオ制作に活用）</li>
+                <li><strong>プログラミング言語学習経験</strong>：Python / C言語 / Java</li>
+            </ul>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <section id="demo">
+    <h2 class="demo-title">Demo Reel</h2>
+    <div class="video-wrapper">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/9P8Xy9a7bJM" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="works">
+        <h2>Works</h2>
+        <div class="works-grid">
+            <div class="work-item">
+                <div class="work-title">ゾンビ歩行</div>
+                <img src="images/Thumbnails/Zombie_Walk_Thumbnail.png" alt="Work 1">
+            </div>
+            <div class="work-item">
+                <div class="work-title">人間歩行サイクル</div>
+                <img src="images/Thumbnails/Walking_Man_Thumbnail.png" alt="Work 2">
+            </div>
+            <div class="work-item">
+                <div class="work-title">起き上がり</div>
+                <img src="images/Thumbnails/Wakeup_Thumbnail.png" alt="Work 3">
+            </div>
+            <div class="work-item">
+                <div class="work-title">狼ランサイクル</div>
+                <img src="images/Thumbnails/Wolf_Running_Thumbnail.png" alt="Work 4">
+            </div>
+            <div class="work-item">
+                <div class="work-title">軍人</div>
+                <img src="images/Thumbnails/Soldier_Thumbnail.png" alt="Work 5">
+            </div>
+            <div class="work-item">
+                <div class="work-title">狐ジャンプ</div>
+                <img src="images/Thumbnails/Mini_Fox_Jumping_Thumbnail.png" alt="Work 6">
+            </div>
+            <div class="work-item">
+                <div class="work-title">走り</div>
+                <img src="images/Thumbnails/Running_Thumbnail.png" alt="Work 7">
+            </div>
+            <div class="work-item">
+                <div class="work-title">バク宙</div>
+                <img src="images/Thumbnails/Backflip_Thumbnail.png" alt="Work 8">
+            </div>
+            <div class="work-item">
+                <div class="work-title">ゾンビ(pt.2)</div>
+                <img src="images/Thumbnails/Zombie_Thumbnail.png" alt="Work 9">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+    <h2>Contact</h2>
+
+    <p>Email: <a href="mailto:filip.kullin@gmail.com">filip.kullin@gmail.com</a></p>
+
+    <a href="https://drive.google.com/drive/u/0/folders/15nwt3naiZ7sMpBk-0wEMH-7twJ0JofPH?hl=ja" target="_blank" class="purple-link">
+        ポートフォリオ&デモリールはこちら（Google Drive）
+    </a>
+
+    <form action="https://formspree.io/f/xxxxxxxx" method="POST">
+    <label>お名前</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>メールアドレス</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>メッセージ</label><br>
+    <textarea name="message" rows="5" required></textarea><br><br>
+
+    <button type="submit">送信</button>
+    </form>
+
+    <p class="notice-text">
+        ※このポートフォリオ・デモリールは個人の制作物であり、無断転載・再配布は禁止させて頂きます。ご理解とご協力をお願いいたします。
+    </p>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2025 Filip Kullin</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

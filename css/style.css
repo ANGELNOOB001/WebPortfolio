@@ -1,0 +1,498 @@
+/* スムーズスクロールと基本設定 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+}
+
+/* リンク共通設定 */
+a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #00ffff;
+    text-decoration: underline;
+}
+
+
+
+/* 共通見出し */
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #bbaeff, #a688ff);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* 共通セクション設定 */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    scroll-margin-top: 80px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 12px 0;
+    /* ヘッダーの高さを少し大きく */
+    z-index: 1000;
+    transition: padding 0.3s ease-in-out;
+}
+
+header.shrink {
+    padding: 0px 0;
+    font-size: 0.8rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/*見出し部分「WELCOM TO MY WORLD」*/
+/*タイピングアニメーション*/
+#typing-text {
+    display: inline-block;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+    }
+
+    @keyframes blink {
+    50% { border-color: transparent; }
+    }
+
+
+/*経歴エリア*/
+/* セクション全体のスタイル */
+#about {
+    padding: 60px 20px;
+    color: #fff;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 80px;
+    color: linear-gradient(45deg, #bbaeff, #a688ff);
+}
+
+/* コンテナ */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 左側：画像 */
+.about-image {
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 右側：テキスト */
+.about-text {
+    flex: 2 1 500px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #fff;
+    border-left: 5px solid #f28c8c;
+    padding-left: 10px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.about-text ul li {
+    padding-left: 1em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.about-text ul li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #f28c8c;
+    font-size: 0.8em;
+}
+
+/* ハイライトカラー強調 */
+.about-text strong {
+    font-weight: bold;
+}
+
+
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
+    }
+
+    #about h2,
+    #demo h2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+/* Heroセクション */
+#hero {
+    background: url('your-background.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    height: 100vh;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px;
+    background-color: #111;
+}
+
+.hero-content {
+    margin-top: -20px;
+    margin-bottom: 0;
+    /* ←40pxなどが不要なら0に */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* スライドショーとの間隔を調整 */
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+/*デモリール*/
+
+#demo {
+    text-align: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.demo-title {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    font-weight: bold;
+    color: linear-gradient(45deg, #bbaeff, #a688ff);
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 960px; /* 最大幅を広く設定 */
+    padding-bottom: 36.25%; /* 16:9 アスペクト比 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+/* Worksグリッド */
+#works h2{
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+}
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    background-color: #1a1a1a;
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.work-item:hover img {
+    opacity: 1;
+}
+
+.work-title {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* スライドショーコンテナ */
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#slideshow-video {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 2;
+}
+
+.left-align {
+    text-align: left;
+}
+
+/* ContactのSNSリンク */
+#contact {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 40px 20px;
+}
+
+#contact h2 {
+    text-align: center;
+    color: #caa0ff; /* お好みの紫色 */
+}
+
+#contact a {
+    color: #caa0ff;
+    text-decoration: none;
+}
+
+#contact form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact button {
+    margin-top: 20px;
+    background-color: #7b67ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #d06a6a;
+}
+
+.notice-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* スライドショーのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .slideshow-container {
+        width: 90%;
+    }
+
+    .video-wrapper iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .slideshow-container {
+        width: 100%;
+    }
+
+    .video-wrapper iframe {
+        height: 300px;
+    }
+}
+
+
+
+
+
+/*タイピングアニメーション*/
+#typing-text {
+    display: inline-block;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+    }
+
+    @keyframes blink {
+    50% { border-color: transparent; }
+    }
